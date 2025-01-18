@@ -1,0 +1,17 @@
+Input: ["anagram", "nagaram"]
+Output: true
+
+Input: ["rat", "car"]
+Output: false
+
+Input: ["a", "a"]
+Output: true
+
+Input: ["ab", "ba"]
+Output: true
+
+Input: ["hello", "ollhe"]
+Output: true
+
+Input: ["test", "ttew"]
+Output: false

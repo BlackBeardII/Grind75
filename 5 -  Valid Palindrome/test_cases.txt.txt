@@ -1,0 +1,14 @@
+Input: ["A man, a plan, a canal: Panama"]
+Output: true
+
+Input: ["race a car"]
+Output: false
+
+Input: [""]
+Output: true
+
+Input: ["0P"]
+Output: false
+
+Input: ["Was it a car or a cat I saw"]
+Output: true
