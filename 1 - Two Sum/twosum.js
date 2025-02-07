@@ -1,35 +1,20 @@
-const runTests = require('../../utils/testRunner');
-
 /**
- * Two Sum using a two-pointer approach with sorted index tracking.
- * @param {number[]} nums - Array of numbers
- * @param {number} target - Target sum
- * @return {number[]} Indices of the two numbers that add up to target
+ * @param {number[]} nums 
+ * @param {number} target 
+ * @return {number[]} 
  */
-function twoSum(nums, target) {
-    // Step 1: Store original indices before sorting
-    let indexedNums = nums.map((num, index) => ({ num, index }));
+var twoSum = function(nums, target) {
+    let j = 1;
 
-    // Step 2: Sort the array based on values
-    indexedNums.sort((a, b) => a.num - b.num);
+    for (let i = 0; i < nums.length - 1; i++) {
+        if (nums[i] + nums[j] === target) return [i, j];
 
-    // Step 3: Two-pointer approach
-    let left = 0, right = indexedNums.length - 1;
+        j++;
 
-    while (left < right) {
-        let sum = indexedNums[left].num + indexedNums[right].num;
-        if (sum === target) {
-            // Step 4: Return the original indices
-            return [indexedNums[left].index, indexedNums[right].index];
-        } else if (sum < target) {
-            left++;
-        } else {
-            right--;
+        if (j >= nums.length) {
+            j = i + 2;
         }
     }
-    
-    return []; // No valid pair found (shouldn't happen per problem constraints)
-}
 
-// Run tests
-runTests(twoSum, './test_cases.txt');
+    return [];
+};
